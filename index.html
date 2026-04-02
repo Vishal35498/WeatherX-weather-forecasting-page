@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WeatherX — Weather Forecast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Weather<span>X</span></div>
+    <div id="clock"></div>
+  </header>
+
+  <!-- SEARCH -->
+  <div class="search-bar">
+    <input id="cityInput" type="text" placeholder="Search city… e.g. Mumbai, Delhi, London" />
+    <button class="btn btn-ghost" id="locBtn" title="Use my location">📍</button>
+    <button class="btn" id="searchBtn">Search</button>
+  </div>
+  <div class="error" id="error">⚠️ City not found. Please try another name.</div>
+
+  <!-- HERO CARD -->
+  <div class="hero">
+    <div>
+      <div class="hero-city" id="heroCity">—</div>
+      <div class="hero-meta" id="heroMeta">—</div>
+      <div class="hero-temp" id="heroTemp">—<sup>°C</sup></div>
+      <div class="hero-desc" id="heroDesc">—</div>
+      <div class="hero-feels" id="heroFeels">—</div>
+    </div>
+    <div class="hero-icon" id="heroIcon">🌡️</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-icon">💧</div>
+      <div class="stat-label">Humidity</div>
+      <div class="stat-val" id="sHumidity">—<span class="stat-unit">%</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">💨</div>
+      <div class="stat-label">Wind</div>
+      <div class="stat-val" id="sWind">—<span class="stat-unit"> km/h</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">🔭</div>
+      <div class="stat-label">Visibility</div>
+      <div class="stat-val" id="sVis">—<span class="stat-unit"> km</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">🌡️</div>
+      <div class="stat-label">Pressure</div>
+      <div class="stat-val" id="sPres">—<span class="stat-unit"> hPa</span></div>
+    </div>
+  </div>
+
+  <!-- HOURLY FORECAST -->
+  <div class="sec-title">Hourly Forecast</div>
+  <div class="hourly" id="hourly"></div>
+
+  <!-- 7-DAY FORECAST -->
+  <div class="sec-title">7-Day Forecast</div>
+  <div class="forecast" id="forecast"></div>
+
+  <!-- BOTTOM ROW -->
+  <div class="bottom">
+    <div class="card">
+      <div class="sec-title">Sunrise / Sunset</div>
+      <div class="sun-row">
+        <span>🌅</span>
+        <div style="flex:1">
+          <div class="sun-bar">
+            <div class="sun-fill" id="sunFill" style="width:0%"></div>
+          </div>
+          <div class="sun-times">
+            <span id="rise">—</span>
+            <span id="set">—</span>
+          </div>
+        </div>
+        <span>🌇</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sec-title">Extra Info</div>
+      <div class="air-row"><span class="air-label">UV Index</span><span class="air-val" id="eUV">—</span></div>
+      <div class="air-row"><span class="air-label">Cloud Cover</span><span class="air-val" id="eCloud">—</span></div>
+      <div class="air-row"><span class="air-label">Wind Direction</span><span class="air-val" id="eWind">—</span></div>
+      <div class="air-row"><span class="air-label">Condition</span><span class="air-val" id="eCond">—</span></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
